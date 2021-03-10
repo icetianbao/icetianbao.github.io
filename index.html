@@ -93,7 +93,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#原始值和引用值一些特性的总结<br>ECMAscript变量包含了两种及不同类型的数据</p>
+        <h1 id="原始值和引用值一些特性的总结"><a href="#原始值和引用值一些特性的总结" class="headerlink" title="原始值和引用值一些特性的总结"></a>原始值和引用值一些特性的总结</h1><h2 id="原始值和引用值的定义"><a href="#原始值和引用值的定义" class="headerlink" title="原始值和引用值的定义"></a>原始值和引用值的定义</h2><p>ECMAscript变量包含了两种及不同类型的数据，原始值就是最简单的数据，就像Undefined、Null、Boolean、Number、String和Symbol。而引用值则是由多个值构成的对象。  </p>
+<h2 id="引用值的一些描述"><a href="#引用值的一些描述" class="headerlink" title="引用值的一些描述"></a>引用值的一些描述</h2><p>JavaScript不允许直接访问内存位置，因此也就不能直接操作对象所在的内存空间，实际上操作的是对该对象的引用而非实际的对象本身。保存引用值得变量是按<strong>引用</strong>访问得。  </p>
+<h2 id="引用值的特性"><a href="#引用值的特性" class="headerlink" title="引用值的特性"></a>引用值的特性</h2><ul>
+<li>可以随时添加、修改和删除其属性和方法，原始值不能有属性，有属性不会报错，但会返回undefined。</li>
+<li>原始值的复制是通过值传递的，而引用值从一个变量到另外一个变量，用的是指针，这意味着他们的地址相同，改变其中的值，他们同时改变，（此处指针指向的是存储在堆内存的对象）</li>
+</ul>
+<h2 id="函数传递参数的理解"><a href="#函数传递参数的理解" class="headerlink" title="函数传递参数的理解"></a>函数传递参数的理解</h2><p>函数传递参数毫无疑问都是<strong>按值来传递</strong>的。当函数外的值被复制到函数内时，原始值的复制就是值的复制，而引用值的复制是值的内存的复制。<br>为了方便自己日后复习，我写个代码。  </p>
+<p>function setName（obj）{<br>obj.name=”Nicholas”;<br>}  </p>
+<p>let person=new Object();<br>setName(person);<br>console.log(person.name); //“Nicholas”</p>
 
       
     </div>
